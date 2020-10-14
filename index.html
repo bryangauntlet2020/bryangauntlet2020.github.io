@@ -23,21 +23,21 @@
     <div class="container">
       <img width=100% src="invertedgauntlet.png"/>
       <div style="text-align: center;">
-        <input id="res" type="text"/>
-        <p id="authorized"></p>
+        <input id="x" type="text"/>
+        <p id="y"></p>
       </div>
       <script>
-        var res = document.getElementById("res");
-        res.addEventListener("keyup", function(event) {
+        var x = document.getElementById("x");
+        x.addEventListener("keyup", function(event) {
           if (event.keyCode === 13) {
             checkcode();
           }
         });
         var checkcode = function(){
-          var password = String.fromCharCode.apply(null, [103, 97, 117, 110, 116, 108, 101, 116, 50, 48, 50, 48]);
-          var ans = res.value;
-          if(ans == password) document.getElementById("authorized").innerHTML = "Here is a clever riddle";
-          else document.getElementById("authorized").innerHTML = "The Goblins do not permit your request. They do not let you into the castle.";
+          var a1 = String.fromCharCode.apply(null, [103, 97, 117, 110, 116, 108, 101, 116, 50, 48, 50, 48]);
+          var a2 = x.value;
+          if(a1 == a2) document.getElementById("y").innerHTML = String.fromCharCode.apply(null, [72, 101, 114, 101, 32, 105, 115, 32, 97, 32, 99, 108, 101, 118, 101, 114, 32, 114, 105, 100, 100, 108, 101]);
+          else document.getElementById("y").innerHTML = String.fromCharCode.apply(null, [84, 104, 101, 32, 71, 111, 98, 108, 105, 110, 115, 32, 100, 111, 32, 110, 111, 116, 32, 112, 101, 114, 109, 105, 116, 32, 121, 111, 117, 114, 32, 114, 101, 113, 117, 101, 115, 116, 46, 32, 84, 104, 101, 121, 32, 100, 111, 32, 110, 111, 116, 32, 108, 101, 116, 32, 121, 111, 117, 32, 105, 110, 116, 111, 32, 116, 104, 101, 32, 99, 97, 115, 116, 108, 101, 46]);;
         }
       </script>
     </div>

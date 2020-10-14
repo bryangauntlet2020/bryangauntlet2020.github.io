@@ -2,20 +2,37 @@
 <html>
   <head>
     <title>Combine The Rings</title>
-    <script>
-      var checkcode = function(){
-        var password = "gauntlet2020";
-        var res = document.getElementById("res").value;
-        if(res == password) document.getElementById("authorized").innerHTML = "Here is your next clue";
-        else document.getElementById("authorized").innerHTML = "";
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+      input {
+        border: 0;
+        outline: 0;
+        background: transparent;
+        border-bottom: 1px solid black;
       }
-    </script>
+    </style>
   </head>
   <body>
-    <img width=10% src="gauntletimage.jpeg"/>
-    <p>Input Code: </p>
-    <input id="res" type="text"/>
-    <button onclick="checkcode()">Check</button>
-    <p id="authorized"></p>
+    <div class="container">
+      <img width=100% src="gauntletimage.png"/>
+      <div style="text-align: center;">
+        <input id="res" type="text"/>
+        <p id="authorized"></p>
+      </div>
+      <script>
+        var res = document.getElementById("res");
+        res.addEventListener("keyup", function(event) {
+          if (event.keyCode === 13) {
+            checkcode();
+          }
+        });
+        var checkcode = function(){
+          var password = "gauntlet2020";
+          var ans = res.value;
+          if(ans == password) document.getElementById("authorized").innerHTML = "Here is a clever riddle";
+          else document.getElementById("authorized").innerHTML = "The Goblins do not permit your request. They do not let you into the castle.";
+        }
+      </script>
+    </div>
   </body>
 </html>

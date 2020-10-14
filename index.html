@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <title>Combine The Rings</title>
+    <script>
+      var checkcode = function(){
+        var res = document.getElementById("res").value;
+        console.log("test");
+        if(res == "test") document.getElementById("authorized").innerHTML = "Here is your next clue";
+        else document.getElementById("authorized").innerHTML = "";
+      }
+    </script>
+  </head>
+  <body>
+    <p>Input Code: </p>
+    <input id="res" type="text"/>
+    <button onclick="checkcode()">Check</button>
+    <p id="authorized"></p>
+  </body>
+</html>

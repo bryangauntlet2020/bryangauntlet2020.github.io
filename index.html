@@ -34,7 +34,7 @@
           }
         });
         var checkcode = function(){
-          var password = "gauntlet2020";
+          var password = String.fromCharCode.apply(null, [103, 97, 117, 110, 116, 108, 101, 116, 50, 48, 50, 48]);
           var ans = res.value;
           if(ans == password) document.getElementById("authorized").innerHTML = "Here is a clever riddle";
           else document.getElementById("authorized").innerHTML = "The Goblins do not permit your request. They do not let you into the castle.";
